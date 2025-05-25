@@ -17,11 +17,11 @@ const url4 = 'https://www.cbc.ca/kids/images/wild_and_wonderful_asian_animals_he
 const url5 = 'https://e1.pxfuel.com/desktop-wallpaper/389/672/desktop-wallpaper-nosey-giraffe-long-neck.jpg'
 
 const items = [
-  <div className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url1})` }}></div>,
-  <div className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url2})` }}></div>,
-  <div className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url3})` }}></div>,
-  <div className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url4})` }}></div>,
-  <div className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url5})` }}></div>,
+  <div key={1} className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url1})` }}></div>,
+  <div key={2} className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url2})` }}></div>,
+  <div key={3} className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url3})` }}></div>,
+  <div key={4} className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url4})` }}></div>,
+  <div key={5} className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url5})` }}></div>,
 ];
 
 const Disciplines = ({ props, showAs }) => {
@@ -62,8 +62,8 @@ const Disciplines = ({ props, showAs }) => {
     return (
       <div id='disciplines' className={Style.container}>
         <h2 className={Style.container__titleVertical}>ESPECIALIDADES</h2>
-        {props?.map((item, index) =>
-          <Link key={index} href={`discipline/${item.id}`} className={Style[`container__${item.id}`]}
+        {props?.map((item, key) =>
+          <Link key={key} href={`discipline/${item.id}`} className={Style[`container__${item.id}`]}
             onMouseEnter={() => handleMouseEnter(`${item.titleUppercase}`)}
             onMouseLeave={() => handleMouseLeave()}
           >
@@ -83,9 +83,9 @@ const Disciplines = ({ props, showAs }) => {
         <div className={Style[`containerPage__${props.id}`]}>
           <h2 className={Style.containerPage_subtitle}>Mira otra especialidades</h2>
           <select className={Style.containerPage__title} onChange={handleChangeDiscipline}>
-       
-            {optionValue.map((option, index) => (
-              <option key={index} value={option.id}>
+
+            {optionValue.map((option, key) => (
+              <option key={key} value={option.id}>
                 {option}
               </option>
             ))}
@@ -149,8 +149,8 @@ const Disciplines = ({ props, showAs }) => {
           <h2>Trabajos de nuestros alumnos  <span className={Style.discipline__workshopStuden__line}></span> </h2>
           <div className={Style.container_discipline}>
             <Zoom duration={3000}>
-              {props.imagesData?.map((item, index) =>
-                <Image key={index} src={`${item.url}`} width={318} height={300}></Image>
+              {props.imagesData?.map((item, key) =>
+                <Image key={key} src={`${item.url}`} width={318} height={300}></Image>
               )}
             </Zoom>
           </div>
@@ -160,20 +160,19 @@ const Disciplines = ({ props, showAs }) => {
           <h2> Plan de estudio <span className={Style.discipline__study__line}></span></h2>
           <div className={Style.discipline__study__infoSubject}>
             {
-              props.subjectPerYear?.map((item, index) => {
+              props.subjectPerYear?.map((item, key) => {
                 return (
-                  <div className={Style.study__infoSubject__info}>
+                  <div key={key} className={Style.study__infoSubject__info}>
                     <h2>{item.year}</h2>
                     <Image
-                      key={index}
                       src={`${item.imageUrl}`}
                       className={Style.study__infoSubject__image}
                       width={318}
                       height={200}></Image>
                     {
-                      item.subjectName?.map((subject, index) => {
+                      item.subjectName?.map((subject, key) => {
                         return (
-                          <h3 key={index}><BsFillCircleFill style={{ color: 'var(--font-color--redIntense)', height: '7', width: '7' }} />&nbsp;&nbsp;{subject.name}</h3>
+                          <h3 key={key}><BsFillCircleFill style={{ color: 'var(--font-color--redIntense)', height: '7', width: '7' }} />&nbsp;&nbsp;{subject.name}</h3>
                         )
                       })
                     }

@@ -2,40 +2,40 @@ import styles from "./NewsSection.module.css";
 import { useRouter } from "next/router";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import Image from 'next/image'
 
 export default function Noticias() {
   const News = [
     {
       id: 1,
       titulo: "Noticia 1",
-        img: "https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg"
+      img: "https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg"
     },
     {
       id: 2,
       titulo: "Noticia 2",
-          img: "https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg"
+      img: "https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_960_720.jpg"
     },
     {
       id: 3,
       titulo: "Noticia 3",
-          img: "https://cdn.pixabay.com/photo/2016/09/28/04/35/classroom-1699745_960_720.jpg"
+      img: "https://cdn.pixabay.com/photo/2016/09/28/04/35/classroom-1699745_960_720.jpg"
     },
     {
       id: 4,
       titulo: "Noticia 4",
-          img: "https://cdn.pixabay.com/photo/2015/03/07/20/14/classroom-663437_960_720.jpg"
+      img: "https://cdn.pixabay.com/photo/2015/03/07/20/14/classroom-663437_960_720.jpg"
     },
     {
       id: 5,
       titulo: "Noticia 5",
-          img: "https://cdn.pixabay.com/photo/2014/10/02/13/44/university-470184_960_720.jpg"
+      img: "https://cdn.pixabay.com/photo/2014/10/02/13/44/university-470184_960_720.jpg"
     },
     {
       id: 6,
       titulo: "Noticia 6",
-          img: "https://cdn.pixabay.com/photo/2016/07/28/00/20/light-1546773_960_720.jpg"
+      img: "https://cdn.pixabay.com/photo/2016/07/28/00/20/light-1546773_960_720.jpg"
     },
     {
       id: 7,
@@ -105,9 +105,9 @@ export default function Noticias() {
   const handleNoticiaClick = (id, noticia) => {
     router.push(
       {
-      pathname: `/news/${id}`,
-      state:  noticia ,
-    });
+        pathname: `/news/${id}`,
+        state: noticia,
+      });
   };
 
   const handlePrevClick = () => {
@@ -127,10 +127,12 @@ export default function Noticias() {
       {News.length > 0 && (
         <>
           <div className={styles.News} onClick={() => handleNoticiaClick(News[newsIndex].id)}>
-            <img
+            <Image
               className={styles.img_second}
               src={News[newsIndex].img}
               alt="Imagen de la noticia"
+              width={960}
+              height={720}
             />
             <h3>candidato</h3>
             <h2>{News[newsIndex].titulo}</h2>
@@ -145,7 +147,12 @@ export default function Noticias() {
                 className={styles.News2Child}
               >
                 <h3>candidato</h3>
-                <img src={noticia.img} alt="Imagen de la noticia" />
+                <Image
+                  src={noticia.img}
+                  alt="Imagen de la noticia"
+                  width={960}
+                  height={720}
+                />
                 <h2>{noticia.titulo}</h2>
                 <h4>11/06/06</h4>
               </div>
@@ -158,7 +165,12 @@ export default function Noticias() {
                 onClick={() => handleNoticiaClick(noticia.id, noticia)}
                 className={styles.News3Child}
               >
-                <img src={noticia.img} alt="Imagen de la noticia" />
+                <Image
+                  src={noticia.img}
+                  alt="Imagen de la noticia"
+                  width={960}
+                  height={720}
+                />
                 <h3>candidato</h3>
                 <h2>{noticia.titulo}</h2>
                 <h4>11/06/06</h4>
@@ -168,24 +180,24 @@ export default function Noticias() {
 
 
           <div className={styles.containerButtongrid}>
-              {(
-                <button onClick={handlePrevClick} className={styles.prevButton}>
-                  {newsIndex > 0 &&( <AiFillCaretLeft/>)}
-                </button>
-              )}
-
-              {newsIndex + 6 < News.length && (
-                <button onClick={handleNextClick} className={styles.nextButton}>
-                  {<AiFillCaretRight/>}
-                </button>
-              )}
-              <button
-                onClick={() => setNewsIndex(0)}
-                className={styles.newsButton}
-              >
-                {"Noticias"}
+            {(
+              <button onClick={handlePrevClick} className={styles.prevButton}>
+                {newsIndex > 0 && (<AiFillCaretLeft />)}
               </button>
-            </div>
+            )}
+
+            {newsIndex + 6 < News.length && (
+              <button onClick={handleNextClick} className={styles.nextButton}>
+                {<AiFillCaretRight />}
+              </button>
+            )}
+            <button
+              onClick={() => setNewsIndex(0)}
+              className={styles.newsButton}
+            >
+              {"Noticias"}
+            </button>
+          </div>
         </>
       )}
     </div>

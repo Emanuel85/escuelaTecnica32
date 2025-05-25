@@ -1,6 +1,7 @@
 import styles from "./News.module.css";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Image from 'next/image'
 
 export default function Noticias() {
   const News = [
@@ -124,7 +125,7 @@ export default function Noticias() {
       {News.length > 0 && (
         <div class={styles.container}>
           <div class={styles.News}>
-            <img
+            <Image
               className={styles.img_second}
               src={News[newsIndex].img}
               alt="Imagen de la noticia"
@@ -134,13 +135,13 @@ export default function Noticias() {
             <h4>11/06/06</h4>  */}
           </div>
           <div class={styles.News3}>
-          {News.slice(newsIndex + 3, newsIndex + 6).map((noticia) => (
+            {News.slice(newsIndex + 3, newsIndex + 6).map((noticia) => (
               <div
                 key={noticia.id}
                 onClick={() => handleNoticiaClick(noticia.id, noticia)}
                 className={styles.News3Child}
               >
-                <img src={noticia.img} alt="Imagen de la noticia" />
+                <Image src={noticia.img} alt="Imagen de la noticia" />
                 {/* <h3>candidato</h3>
                 <h2>{noticia.titulo}</h2>
                 <h4>11/06/06</h4> */}
@@ -149,17 +150,17 @@ export default function Noticias() {
           </div>
           <div class={styles.News2}></div>
           {News.slice(newsIndex + 1, newsIndex + 3).map((noticia) => (
-              <div
-                key={noticia.id}
-                onClick={() => handleNoticiaClick(noticia.id, noticia)}
-                className={styles.News2Child}
-              >
-                <img src={noticia.img} alt="Imagen de la noticia" />
-                {/* <h3>candidato</h3> */}
-                {/* <h2>{noticia.titulo}</h2>
+            <div
+              key={noticia.id}
+              onClick={() => handleNoticiaClick(noticia.id, noticia)}
+              className={styles.News2Child}
+            >
+              <Image src={noticia.img} alt="Imagen de la noticia" />
+              {/* <h3>candidato</h3> */}
+              {/* <h2>{noticia.titulo}</h2>
                 <h4>11/06/06</h4> */}
-              </div>
-            ))}
+            </div>
+          ))}
         </div>
       )}
     </>

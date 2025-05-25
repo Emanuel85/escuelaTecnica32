@@ -12,8 +12,8 @@ const Area = ({ areaNum, setArea }) => {
 
   return (
     <>
-      {resulFilter?.map((item) =>
-        <div className={styles.container}>
+      {resulFilter?.map((item, key) =>
+        <div key={key} className={styles.container}>
           <div className={styles.containerImage}>
             <div className={styles.img1}></div>
             <div className={styles.img2}></div>
@@ -26,8 +26,10 @@ const Area = ({ areaNum, setArea }) => {
               <p>{item.text}</p>
               <h3>AREAS QUE INTEGRAN</h3>
               <div className={styles.lineText}></div>
-              {item.areas.map(area => (
-                <p className={styles.areaName}>· {area.name}</p>
+              {item.areas.map((area, key) => (
+                <div key={key}>
+                  <p className={styles.areaName}>· {area.name}</p>
+                </div>
               ))}
               <div className={styles.areaButton}>
                 <button onClick={() => handleCancel}>CERRAR</button>
