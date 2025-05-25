@@ -1,8 +1,7 @@
+import disciplineData from "../pages/api/item";
+
 export async function getDisciplineItem() {
-    const res = await fetch(`http://localhost:3000/api/item`);
-    const items = await res.json();
-    return items;
-    
+  return disciplineData;
 }
 
 
