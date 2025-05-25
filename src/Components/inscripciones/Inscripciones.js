@@ -20,7 +20,7 @@ const Inscripciones = () => {
       <h2 className={styles.container__titleVertical}>INSCRIPCIONES</h2>
       <h1 className={styles.title}>Comienza a estudiar con nosotros<span></span></h1>
       <div className={styles.content}>
-        <Link href={''} className={styles.content__image}
+        <a href={'https://buenosaires.gob.ar/educacion/estudiantes/inscripcionescolar'} target="_blank" className={styles.content__image}
           onMouseEnter={() => handleMouseEnter(`ingresa`)}
           onMouseLeave={() => handleMouseLeave()}>
           <div style={{ opacity: showText === '' ? 1 : 0, transition: `opacity 0.3s ease` }}>
@@ -28,7 +28,7 @@ const Inscripciones = () => {
             <p>Nuestros programas curriculares y actividades te permitirán desarrollar tus habilidades y talentos.¡Inscríbete hoy y únete a nuestra comunidad!.</p>
           </div>
           <h2 className={styles.content__title__inscripcion} style={{ opacity: showText === 'ingresa' ? 1 : 0, transition: `opacity 0.3s ease` }}>INSCRIBITE</h2>
-        </Link>
+        </a>
       </div >
     </div >
   );
