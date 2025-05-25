@@ -54,27 +54,35 @@
 }
 
 .btnMoreInfo {
-    width: 5%;
-    height: 40px;
     position: relative;
     z-index: 9;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid var(--background--redIntense);
-    border-radius: 15px;
 }
 
 .btnMoreInfo button {
-    font-size: var(--font-size--regular);
-    color: var(--font-color--white);
+    width: 100px;
+    height: 40px;
+    color: var(--background--grey);
+    font-size: var(--font-size--large);
+    font-weight: 800;
+    border-radius: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: all .6s ease;
 }
 
-.btnMoreInfo:hover {
+.btnMoreInfo button:hover {
+    height: 40px;
+    color: var(--background--white);
+    border-radius: 10px;
+    font-size: var(--font-size--large);
+    font-weight: 800;
+    border: none;
     background-color: var(--background--redIntense);
+    transition: all .8s ease;
 }
 
 .container__msg {

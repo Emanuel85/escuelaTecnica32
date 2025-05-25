@@ -1,7 +1,7 @@
 .container {
   display: flex;
   height: 77vh;
-  width: 60vw;
+  width: 100%;
   position: relative;
   z-index: 9;
 }
@@ -105,19 +105,20 @@
   color: var(--background--grey);
   font-size: var(--font-size--regular);
   font-weight: 800;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   background-color: transparent;
-  /* margin: 0 15px 15px 0; */
+  transition: all .6s ease;
 }
 
 .areaButton button:hover {
   height: 40px;
   color: var(--background--white);
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: var(--font-size--regular);
   font-weight: 800;
   border: none;
   background-color: var(--background--redIntense);
-  transition: all .5s ease;
+  transition: all .8s ease;
 }

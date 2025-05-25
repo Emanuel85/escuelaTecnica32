@@ -22,7 +22,7 @@
   opacity: 0.98;
 }
 
-.container__titleVertical{
+.container__titleVertical {
   transform: rotate(-90deg);
   display: flex;
   z-index: 1;
@@ -120,14 +120,51 @@
   color: var(--font-color--grey);
 }
 
-.content__title__inscripcion{
-  font-size: 50px!important;;
+.content__title__inscripcion {
+  font-size: 50px !important;
   display: flex;
   position: absolute;
-  top: -16px;
-  left: 0;
+  top: -15px;
+  left: 0px;
   height: 100%;
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+
+
+@media only screen and (max-width:768px) {
+  .title {
+    margin: 20px auto;
+    margin-top: 40px;
+    font-size: 15px;
+  }
+
+  .container__titleVertical {
+    display: none;
+  }
+
+  .title span {
+    margin-top: 10px;
+  }
+
+  .content__image p {
+    display: none;
+  }
+
+
+  .content__image {
+    width: 330px;
+    background-size: cover;
+  }
+  .content__image h2 {
+    margin: 65px 8px;
+  }
+
+  .content__title__inscripcion{
+    top: -60px;
+    left: -8px;
+  }
+
 }

@@ -15,7 +15,7 @@ export default function Seccions() {
     setShowText('')
   }
 
-  const handleClick = () => { 
+  const handleClick = () => {
     setArea(0);
   };
 
@@ -24,7 +24,9 @@ export default function Seccions() {
   if (area === 0) {
     componentToShow = (
       <div className={styles.container} id="sections">
+
         {
+
           itemSeccions?.map((item, index) =>
             <div key={index} className={styles[`area${item.id}`]} onClick={() => setArea(item.id)}
               onMouseEnter={() => handleMouseEnter(`${item.title}`)}
@@ -44,5 +46,8 @@ export default function Seccions() {
     );
   }
 
-  return <div>{componentToShow}</div>;
+  return (<div>
+    <h2 className={styles.container__titleVertical}>INFRRAESTRUCTURA</h2>
+    {componentToShow}
+  </div>);
 }
