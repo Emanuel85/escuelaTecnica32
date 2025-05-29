@@ -18,7 +18,7 @@ const Inscripciones = () => {
   return (
     <div id='inscripciones' className={styles.container}>
       <h2 className={styles.container__titleVertical}>INSCRIPCIONES</h2>
-      <h1 className={styles.title}>Comienza a estudiar con nosotros<span></span></h1>
+      <h1 className={styles.title}>Comienza estudiar con nosotros<span></span></h1>
       <div className={styles.content}>
         <a href={'https://buenosaires.gob.ar/educacion/estudiantes/inscripcionescolar'} target="_blank" className={styles.content__image}
           onMouseEnter={() => handleMouseEnter(`ingresa`)}

@@ -44,9 +44,9 @@ const NavBar = ({ page }) => {
             <Link href='' onClick={handleOpenSideBar}>
               CALENDARIO
             </Link>
-            <Link href='' onClick={handleOpenSideBar}>
+            {/* <Link href='' onClick={handleOpenSideBar}>
               NOTICIAS
-            </Link>
+            </Link> */}
             <Link href='' onClick={handleOpenSideBar} >
               AUTORIDADES
             </Link>

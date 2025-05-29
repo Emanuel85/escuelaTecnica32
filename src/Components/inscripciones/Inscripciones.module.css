@@ -138,14 +138,20 @@
   .title {
     margin: 20px auto;
     margin-top: 40px;
-    font-size: 15px;
+    font-size: 22px;
+    text-align: center;
   }
 
   .container__titleVertical {
     display: none;
   }
 
+  .content {
+    margin-top: 30px;
+  }
+
   .title span {
+    width: 50%;
     margin-top: 10px;
   }
 
@@ -156,13 +162,17 @@
 
   .content__image {
     width: 330px;
+    height: 140px;
     background-size: cover;
   }
+
   .content__image h2 {
-    margin: 65px 8px;
+    font-size: 20px;
+    text-align: center;
+    margin: 65px 0px;
   }
 
-  .content__title__inscripcion{
+  .content__title__inscripcion {
     top: -60px;
     left: -8px;
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Style from './Disciplines.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,7 +6,6 @@ import AliceCarousel from 'react-alice-carousel';
 import { IoChevronForwardSharp } from "react-icons/io5";
 import { Zoom, Fade } from 'react-reveal';
 import { BsFillCircleFill } from "react-icons/bs";
-import { assignment } from '@/Service/optionAssignment'
 import { useRouter } from 'next/router';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -24,36 +23,31 @@ const items = [
   <div key={5} className={Style.discipline__photo__two} style={{ backgroundImage: `url(${url5})` }}></div>,
 ];
 
+const allDisciplines = [
+  { id: 'computacion', label: 'Computación' },
+  { id: 'automotores', label: 'Automotores' },
+  { id: 'mecanica', label: 'Mecánica' },
+];
+
 const Disciplines = ({ props, showAs }) => {
 
   const [showText, setShowText] = useState('')
-  const [optionValue, setOptionValue] = useState([])
+  const [valueSelect, setValueSelect] = useState('')
   const router = useRouter();
-  let optionDefault = props.id
 
   const handleMouseEnter = (text) => {
     setShowText(text)
   }
 
-  function optionSelect() {
-    return assignment(optionDefault)?.filter(discipline => discipline.id !== optionDefault);
-  }
-
-  useEffect(() => {
-    let resultOption = optionSelect()
-    setOptionValue(resultOption)
-  }, [optionDefault])
-
-
 
   const handleMouseLeave = () => {
     setShowText('')
-  }
-
+  } 
 
   const handleChangeDiscipline = (e) => {
     const selectDiscipline = e.target.value
     if (selectDiscipline) {
+      setValueSelect(selectDiscipline)
       router.push(`/discipline/${selectDiscipline.toLowerCase()}`);
     }
   }
@@ -82,14 +76,13 @@ const Disciplines = ({ props, showAs }) => {
 
         <div className={Style[`containerPage__${props.id}`]}>
           <h2 className={Style.containerPage_subtitle}>Mira otra especialidades</h2>
-          <select className={Style.containerPage__title} onChange={handleChangeDiscipline}>
-
-            {optionValue.map((option, key) => (
-              <option key={key} value={option.id}>
-                {option}
+          <select className={Style.containerPage__title} onChange={handleChangeDiscipline} value={valueSelect}>
+            <option value="" disabled>Especialidad</option>
+            {allDisciplines.map((option) => (
+              <option key={option.id} value={option.id}>
+                {option.label}
               </option>
             ))}
-
           </select>
         </div>
 

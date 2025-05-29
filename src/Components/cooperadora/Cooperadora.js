@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from './cooperadora.module.css'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css';
 import itemCoop from '@/pages/api/itemCoop';
-
-
 
 const itemsImg = itemCoop.map(item => (
   <div
@@ -27,16 +25,17 @@ const itemsText = itemCoop.map(item => (
 ))
 
 
-
 const Cooperadora = () => {
-  console.log(itemCoop)
+  const responsive = {
+  600: { items: 1 },
+}
   return (
     <div id='cooperadora' className={Style.container}>
       <h1 className={Style.title}>Cooperadora Tecnica 32<span></span></h1>
       <p className={Style.text}>
-        Bienvenidos a la cooperadora de la 32. Estamos para ayudar y acompañar a tus hijos en la escuela, colaborando con necesidades y materiales. Necesitamos de su colaboración para alcanzar este objetivo, no solo en términos monetarios, sino también padres comprometidos que formen parte de la cooperadora. Los esperamos para escuchar sus inquietudes y propuestas.</p>
+        Estamos para ayudar y acompañar a tus hijos, colaborando con necesidades y materiales. Los esperamos para escuchar sus inquietudes y propuestas.</p>
       <a className={Style.btnMoreInfo} href='../../Assets/instructivoDocente.pdf' target='_blank'>
-        <button>+INFO</button>
+        <button>INFORMACION</button>
       </a>
       <div className={Style.container__msg}>
         <div className={Style.msg}>
@@ -52,6 +51,7 @@ const Cooperadora = () => {
             disableDotsControls
             disableButtonsControls
             items={itemsText}
+            responsive={responsive}
           />
 
         </div>
@@ -62,7 +62,7 @@ const Cooperadora = () => {
             autoPlayControls={false}
             autoPlayStrategy="none"
             autoPlayInterval={5000}
-            animationDuration={5500}
+            animationDuration={4500}
             autoPlayDirection='rtl'
             animationType="slide"
             infinite
@@ -70,6 +70,7 @@ const Cooperadora = () => {
             disableDotsControls
             disableButtonsControls
             items={itemsImg}
+            responsive={responsive}
           />
 
         </div>
