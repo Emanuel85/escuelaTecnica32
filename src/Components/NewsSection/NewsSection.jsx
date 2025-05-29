@@ -124,7 +124,8 @@ export default function Noticias() {
 
   return (
     <div className={styles.container}>
-      {News.length > 0 && (
+      <p>PRONTO PODRÁS <br/> VER TODAS LAS <br/> NOTICIAS AQUÍ.</p>
+      {/* {News.length > 0 && (
         <>
           <div className={styles.News} onClick={() => handleNoticiaClick(News[newsIndex].id)}>
             <Image
@@ -199,7 +200,8 @@ export default function Noticias() {
             </button>
           </div>
         </>
-      )}
+      )} */}
+       
     </div>
   );
 }
