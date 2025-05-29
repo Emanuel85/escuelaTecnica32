@@ -9,7 +9,7 @@ const itemCoop=[
         id: 2,
         title:'Voucher de Libreria',
         text:'Ya estan disponibles los Vouchers para los productos de libreria, pueden retirarlos los dias Lunes, Miercoles y Viernes de 07:30hs a 14:00hs',
-        url:'https://cutewallpaper.org/28/cool-africa-wallpaper/1306022341.jpg',
+        url:'https://raw.githubusercontent.com/imagezzzz/blog_background/main/42.jpg',
     },
     {
         id: 3,
@@ -26,7 +26,7 @@ const itemCoop=[
     {
         id: 5,
         title:'Herramientas para Talleres',
-        text:'La cooperadora se encuentra en proceso de adquisición de nuevas herramientas para ser utilizadas por los alumnos en los talleres. Esto permitirá brindar a los estudiantes los recursos necesarios para mejorar su experiencia y aprendizaje en el entorno de taller.',
+        text:'La cooperadora se encuentra en proceso de adquisición de nuevas herramientas para ser utilizadas por los alumnos en los talleres.',
         url:'https://e1.pxfuel.com/desktop-wallpaper/389/672/desktop-wallpaper-nosey-giraffe-long-neck.jpg',
     },
 ]
