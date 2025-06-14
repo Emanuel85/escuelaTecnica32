@@ -47,7 +47,7 @@ export default function Seccions() {
   }
 
   return (<div>
-    <h2 className={styles.container__titleVertical}>INFRRAESTRUCTURA</h2>
+    {/* <h2 className={styles.container__titleVertical}>INFRRAESTRUCTURA</h2> */}
     {componentToShow}
   </div>);
 }

@@ -55,7 +55,7 @@ const Disciplines = ({ props, showAs }) => {
   if (showAs === 'allDisciplines') {
     return (
       <div id='disciplines' className={Style.container}>
-        <h2 className={Style.container__titleVertical}>ESPECIALIDADES</h2>
+        {/* <h2 className={Style.container__titleVertical}>ESPECIALIDADES</h2> */}
         {props?.map((item, key) =>
           <Link key={key} href={`discipline/${item.id}`} className={Style[`container__${item.id}`]}
             onMouseEnter={() => handleMouseEnter(`${item.titleUppercase}`)}
@@ -143,7 +143,7 @@ const Disciplines = ({ props, showAs }) => {
           <div className={Style.container_discipline}>
             <Zoom duration={3000}>
               {props.imagesData?.map((item, key) =>
-                <Image key={key} src={`${item.url}`} width={318} height={300}></Image>
+                <Image key={key} src={`${item.url}`} width={200} height={300}></Image>
               )}
             </Zoom>
           </div>

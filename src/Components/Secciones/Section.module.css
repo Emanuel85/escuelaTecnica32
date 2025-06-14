@@ -224,4 +224,15 @@
   .area6 {
     font-size: 50%;
   }
+
+  .area1 h1,
+  .area2 h1,
+  .area3 h1,
+  .area4 h1,
+  .area5 h1,
+  .area6 h1 {
+    font-size: 15px;
+  }
+
+
 }

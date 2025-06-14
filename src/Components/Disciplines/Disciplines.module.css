@@ -352,7 +352,7 @@
 
 .study__infoSubject__info {
   width: 350px;
-  height: 740px;
+  height: 770px;
   background-color: var(--background--white);
   border-radius: 10px;
 }
@@ -372,7 +372,8 @@
   align-items: center;
   font-weight: 100;
   padding: 8px 20px;
-  font-size: var(--font-size--regular);
+  /* font-size: var(--font-size--regular); */
+  font-size: 13px;
 }
 
 
@@ -579,7 +580,10 @@
     background-image: url('../../Assets/Images/bg_page_automotores.jpg');
   }
 
-
+  .study__infoSubject__info h3 {
+    font-size: 13px;
+    padding: 11px 20px;
+  }
 
 
 }

@@ -127,6 +127,7 @@
 }
 
 .info__text {
+    font-size: 14px;
     width: 70%;
     margin-top: 5%;
     margin-left: 5%;
@@ -158,7 +159,7 @@
 @media only screen and (max-width:768px) {
 
     .msg {
-        height: 300px;
+        height: 260px;
     }
 
     .msg__title {
@@ -170,7 +171,8 @@
     }
 
     .title {
-        font-size: 25px;
+        margin-top: 40px;
+        font-size: 22px;
     }
 
     .title span {
@@ -179,13 +181,14 @@
     }
 
     .text {
-        position: relative;
+        display: none;
+        /* position: relative;
         z-index: 9;
         width: 75%;
         font-size: 16px;
         text-align: start;
         color: var(--font-color--grey);
-        margin-bottom: 2%;
+        margin-bottom: 2%; */
     }
 
     .container__msg {

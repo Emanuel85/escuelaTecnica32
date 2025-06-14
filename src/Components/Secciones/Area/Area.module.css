@@ -75,14 +75,15 @@
   font-size: var(--font-size--large);
   color: var(--background--white);
 }
- 
-.areaText h3::after{
+
+.areaText h3::after {
   content: '';
   position: absolute;
   bottom: -8px;
   left: 0%;
   /* transform: translateX(-50%); */
-  width: 80px; /* Largo del borde */
+  width: 80px;
+  /* Largo del borde */
   border-bottom: 5px solid var(--background--redIntense);
 }
 
@@ -121,4 +122,71 @@
   border: none;
   background-color: var(--background--redIntense);
   transition: all .8s ease;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerImage {
+    height: 70%;
+    width: auto;
+  }
+
+  .areaText h3 {
+    display: none;
+  }
+
+  .areaText p {
+    font-size: 12px;
+  }
+
+
+  .img1 {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .img2 {
+    display: none;
+  }
+
+  .area {
+    width: auto;
+    height: 130%;
+  }
+
+  .areaTitle>h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .lineText {
+    display: none;
+  }
+
+  .areaName {
+    display: none;
+  }
+
+  .areaButton button {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+  }
+
+
+  .areaButton button:hover {
+    font-size: 14px;
+    height: 30px;
+    width: 90px;
+  }
+
+
 }
