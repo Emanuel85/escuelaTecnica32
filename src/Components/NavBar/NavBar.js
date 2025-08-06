@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Style from './NavBar.module.css'
 import Link from 'next/link'
+import dynamic from 'next/dynamic';
 import { HiMenu } from 'react-icons/hi'
 import { useRouter } from 'next/router'
 
+const CalendarModalTrigger = dynamic(() => import('./CalendarModalTrigger'), { ssr: false });
 const NavBar = ({ page }) => {
   const [sideBarOpen, setSideBarOpen] = useState(false)
   const router = new useRouter()
@@ -41,9 +43,7 @@ const NavBar = ({ page }) => {
       <div className={`${Style.container__navBar} ${sideBarOpen ? Style.container__navBarOpen : Style.container__navBarClosed}`}>
         <div className={Style.container__navBarTop}>
           <nav>
-            <Link href='' onClick={handleOpenSideBar}>
-              CALENDARIO
-            </Link>
+            <CalendarModalTrigger handleOpenSideBar={handleOpenSideBar} />
             {/* <Link href='' onClick={handleOpenSideBar}>
               NOTICIAS
             </Link> */}

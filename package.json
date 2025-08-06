@@ -16,7 +16,8 @@
     "framer-motion": "^4.1.17",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-alice-carousel": "^2.7.1",
+    "react-alice-carousel": "^2.9.1",
+    "react-calendar": "^6.0.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-reveal": "^1.2.2"
