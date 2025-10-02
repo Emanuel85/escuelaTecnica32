@@ -57,53 +57,61 @@ const EventCalendar = () => {
           ))}
         </select>
       </div>
-      <Calendar
-        value={currentDate}
-        onClickDay={() => {}} // No hace nada al clickear
-        tileClassName={({ date, view }) => {
-          if (view === 'month') {
-            const isToday = date.toDateString() === new Date().toDateString();
-            const hasEvent = monthEvents.some(e => {
-              const [y, m, d] = e.date.split('-');
-              return (
-                parseInt(y) === date.getFullYear() &&
-                parseInt(m) === date.getMonth() + 1 &&
-                parseInt(d) === date.getDate()
-              );
-            });
-            if (isToday) return styles.todayDay;
-            return hasEvent ? styles.eventDay : styles.defaultDay;
-          }
-        }}
-        prevLabel={null}
-        nextLabel={null}
-        prev2Label={null}
-        next2Label={null}
-        showNeighboringMonth={false}
-        navigationLabel={() => null}
-        navigationAriaLabel={null}
-        className={styles.noNav}
-      />
-      <div className={styles.eventList}>
-        {monthEvents.length === 0 ? (
-          <p>No hay eventos para este mes.</p>
-        ) : (
-          <ul>
-            {monthEvents.map((e, i) => {
-              const day = parseInt(e.date.split('-')[2], 10);
-              return (
-                <li key={i}>
-                  <span className={styles.eventDayBox}>{day}</span>
-                  <span>
-                    <strong className={styles.eventTitle}>{e.title}</strong><br />
-                    <span>{e.description}</span>
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+      <div className={styles.calendarAndEvents}>
+        <Calendar
+          value={currentDate}
+          tileClassName={({ date, view }) => {
+            if (view === 'month') {
+              const isToday = date.toDateString() === new Date().toDateString();
+              const hasEvent = monthEvents.some(e => {
+                const [y, m, d] = e.date.split('-');
+                return (
+                  parseInt(y) === date.getFullYear() &&
+                  parseInt(m) === date.getMonth() + 1 &&
+                  parseInt(d) === date.getDate()
+                );
+              });
+              if (isToday) return styles.todayDay;
+              return hasEvent ? styles.eventDay : styles.defaultDay;
+            }
+          }}
+          prevLabel={null}
+          nextLabel={null}
+          prev2Label={null}
+          next2Label={null}
+          showNeighboringMonth={false}
+          navigationLabel={() => null}
+          navigationAriaLabel={null}
+          className={styles.noNav}
+        />
+        <div >
+          {monthEvents.length === 0 ? (
+            <div className={styles.eventList}>
+              <p>No hay eventos para este mes.</p>
+            </div>
+          ) : (
+            <div className={styles.eventListComplete}>
+              <ul>
+                {monthEvents.map((e, i) => {
+                  const day = parseInt(e.date.split('-')[2], 10);
+                  return (
+                    <li key={i}>
+                      <span className={styles.eventDayBox}>{day}</span>
+                      <span>
+                        <strong className={styles.eventTitle}>{e.title}</strong><br />
+                        <span>{e.description}</span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+        </div>
+
       </div>
+
+
     </div>
   );
 };

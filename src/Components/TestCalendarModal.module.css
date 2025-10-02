@@ -4,7 +4,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,22 +14,79 @@
 }
 
 .modalContent {
-  background: #171715;
-  /* padding: 2rem 2.5rem; */
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  width: 60vw;
+  /* height: 600px; */
+  max-width: 900px;
   min-width: 320px;
+  max-height: 90vh;
+  /* min-height: 600px; */
+  background: #171715;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.modalTitle {
+    display: flex;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    color: var(--background--white);
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modalTitle span {
+  display: flex;
+  border-bottom: solid 3px var(--background--redIntense);
+  margin-top: .5%;
+  width: 10%;
+}
+
+
+.calendarContainer {
+  flex: 1;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeButtonContainer {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 100%;
 }
 
 .closeButton {
-  margin-bottom: 20px;
-  padding: 0.5rem 1.5rem;
-  background: #1976d2;
-  color: #fff;
+  height: 40px;
+  width: 100px;
+  color: var(--background--grey);
+  font-size: var(--font-size--regular);
+  font-weight: 800;
+  border-radius: 10px;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
+  background-color: transparent;
+  transition: all .6s ease;
 }
 
+.closeButton:hover {
+  height: 40px;
+  color: var(--background--white);
+  border-radius: 10px;
+  font-size: var(--font-size--regular);
+  font-weight: 800;
+  border: none;
+  background-color: var(--background--redIntense);
+  transition: all .8s ease;
+}

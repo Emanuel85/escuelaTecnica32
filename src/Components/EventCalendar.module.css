@@ -1,40 +1,78 @@
 .react-calendar__navigation {
-  display: none !important;
+  display: none;
 }
-.noNav > div:first-of-type {
-    display: none !important;
+
+.noNav>div:first-of-type {
+  display: none;
 }
+
+/* Fijar altura del calendario para 6 filas (mes más largo como marzo) */
+.noNav {
+  width: 300px;
+  height: 260px;
+  min-height: 240px;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.noNav .react-calendar__month-view {
+  height: 240px;
+}
+
+.noNav .react-calendar__month-view__weekdays {
+  height: 30px;
+}
+
+.noNav .react-calendar__month-view__days {
+  height: 210px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.noNav .react-calendar__tile {
+  height: 35px;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .todayDay {
   color: #d32f2f !important;
   font-weight: bold !important;
-  background: none !important;
+  background: none;
   border-radius: 0;
 }
+
 .defaultDay {
-  color: #222 !important;
+  color: #222;
   font-weight: normal;
+}
+
+.eventDay {
+  color: #1976d2 !important;
+  font-weight: bold !important;
+  background: rgba(25, 118, 210, 0.1);
+  border-radius: 4px;
 }
 
 .eventTitle {
   color: #1976d2;
   font-weight: bold;
 }
-.eventDay {
-  color: #1976d2 !important;
-  font-weight: bold !important;
-  background: none !important;
-  border-radius: 0;
-}
+
 .calendarContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1.5rem 0 1.5rem;
+  justify-content: flex-start;
+  padding: 20px;
   background: #171715;
   border-radius: 16px;
-  min-width: 340px;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 850px;
+  /* height: 520px;
+  min-height: 520px; */
 }
 
 .monthSelector {
@@ -46,15 +84,22 @@
 }
 
 .monthSelector select {
-  font-size: 1rem;
-  padding: 0.3rem 1.2rem;
+  font-size: 16px;
+  padding: 12px 150px 12px 12px;
   border-radius: 8px;
-  border: 1.5px solid #1976d2;
   background: #f5faff;
   color: #1976d2;
   font-weight: bold;
   outline: none;
-  box-shadow: 0 1px 4px rgba(25,118,210,0.07);
+}
+
+.calendarAndEvents {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .yearLabel {
@@ -74,30 +119,51 @@
 }
 
 .eventList {
-  margin-top: 1.5rem;
-  width: 100%;
-  max-width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  max-width: 350px;
   background: #fff;
   border-radius: 12px;
   box-shadow: none;
-  padding: 0;
-  margin-bottom: 1.2rem;
-  max-height: 120px;
+  padding: 16px;
+  height: 200px;
   overflow-y: auto;
+  margin: 20px 0;
 }
 
-.eventList h3 {
+.eventList p {
+  font-size: 1.1rem;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+
+.eventListComplete {
+  width: 350px;
+  display: block;
+  max-width: 350px;
+  /* background: #fff; */
+  height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.eventListComplete h3 {
   margin-top: 0;
   font-size: 1.1rem;
   color: #1976d2;
 }
 
-.eventList ul {
+.eventListComplete ul {
   padding-left: 0;
   margin: 0;
 }
 
-.eventList li {
+.eventListComplete li {
   display: flex;
   align-items: flex-start;
   gap: 0.7rem;
@@ -105,7 +171,7 @@
   border-radius: 8px;
   padding: 0.7rem 0.8rem;
   box-shadow: none;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 
 .eventIcon {
