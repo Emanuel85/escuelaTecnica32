@@ -47,12 +47,18 @@ const NavBar = ({ page }) => {
             {/* <Link href='' onClick={handleOpenSideBar}>
               NOTICIAS
             </Link> */}
+            <Link href="/profesores" onClick={handleOpenSideBar}>
+              PROFESORES
+            </Link>
+            <Link href="/alumnos" onClick={handleOpenSideBar}>
+              ALUMNOS
+            </Link>
             <Link href='' onClick={handleOpenSideBar} >
               AUTORIDADES
             </Link>
-            <Link href='' onClick={handleOpenSideBar}>
+            {/* <Link href='' onClick={handleOpenSideBar}>
               AULA VIRTUAL
-            </Link>
+            </Link> */}
           </nav>
         </div>
         <div className={Style.container__navBarBottom}>
