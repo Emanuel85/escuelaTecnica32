@@ -5,12 +5,10 @@ import HomeIndex from '@/Components/HomeIndex/HomeIndex'
 import Disciplines from '@/Components/Disciplines/Disciplines'
 import Section from '@/Components/Secciones/Section.jsx'
 import { getDisciplineItem } from '@/Service/DisciplineItem'
-import dynamic from 'next/dynamic';
 import Inscripciones from '@/Components/inscripciones/Inscripciones'
 import Cooperadora from '@/Components/cooperadora/Cooperadora'
 import { Footer } from '@/Components/Footer/Footer'
 import TestCalendarModal from '../Components/TestCalendarModal.client';
-import {Title} from 'hookbee_ui'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,7 +16,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home({ item }) {
   return (
     <>
-    <Title>Esc. Técnica 32 "Gral. José de San Martín"</Title>
       <Layout
         title='Esc. Tenica 32 "Gral. Jose de San Martin"'
         favicon='/logoet32.ico'
