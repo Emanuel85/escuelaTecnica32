@@ -48,7 +48,7 @@ const Alumnos = () => {
             description: "Descarga el horario actualizado de todas las materias y especialidades.",
             fullContent:
                 "Descarga el horario actualizado de todas las materias y especialidades. Este documento incluye los horarios de clases teóricas, prácticas de taller, educación física y todas las actividades extracurriculares. Recuerda verificar cualquier cambio en la cartelera institucional.",
-            downloadUrl: "#",
+            downloadUrl: '/instructivoDocente.pdf',
             size: "xsmall",
         },
         {
@@ -195,6 +195,10 @@ const Alumnos = () => {
         setSelectedResource(null)
     }
 
+    const handleDownload = (downloadUrl) => {
+        window.open(downloadUrl, '_blank')
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.hero}>
@@ -202,7 +206,7 @@ const Alumnos = () => {
                 <p>Material de estudio, horarios y recursos para tu aprendizaje.</p>
             </div>
 
-            <div className={styles.featured}>
+            {/* <div className={styles.featured}>
                 <div className={styles.carousel}>
                     <button className={styles.carouselBtn} onClick={prevSlide}>
                         ‹
@@ -241,7 +245,7 @@ const Alumnos = () => {
                         ›
                     </button>
                 </div>
-            </div>
+            </div> */}
 
             <div className={styles.resourcesGrid}>
                 {resources.map((resource, index) => (
@@ -261,7 +265,7 @@ const Alumnos = () => {
                         </div>
                         <h3>{resource.title}</h3>
                         <p>{resource.description}</p>
-                        <div className={styles.reactions}>
+                        {/* <div className={styles.reactions}>
                             <button
                                 className={`${styles.like} ${reactions.resources[index].userLiked ? styles.active : ""}`}
                                 onClick={(e) => handleResourceLike(e, index)}
@@ -276,7 +280,7 @@ const Alumnos = () => {
                                 {reactions.resources[index].userDisliked ? <AiFillDislike /> : <AiOutlineDislike />}
                                 {reactions.resources[index].dislikes}
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>
@@ -301,7 +305,7 @@ const Alumnos = () => {
                         <h2>{selectedResource.title}</h2>
                         <p className={styles.modalDescription}>{selectedResource.fullContent}</p>
 
-                        <div className={styles.modalReactions}>
+                        {/* <div className={styles.modalReactions}>
                             <button
                                 className={`${styles.like} ${reactions.resources[selectedResource.index].userLiked ? styles.active : ""}`}
                                 onClick={(e) => handleResourceLike(e, selectedResource.index)}
@@ -316,16 +320,19 @@ const Alumnos = () => {
                                 {reactions.resources[selectedResource.index].userDisliked ? <AiFillDislike /> : <AiOutlineDislike />}
                                 {reactions.resources[selectedResource.index].dislikes}
                             </button>
-                        </div>
+                        </div> */}
 
                         {selectedResource.downloadUrl && (
-                            <a href={selectedResource.downloadUrl} className={styles.actionBtn}>
-                                Descargar
-                            </a>
+                            <button
+                                onClick={() => handleDownload(selectedResource.downloadUrl)}
+                                className={styles.actionBtn}
+                            >
+                                Mas info
+                            </button>
                         )}
                         {selectedResource.visitUrl && (
                             <a href={selectedResource.visitUrl} className={styles.actionBtn}>
-                                Visitar
+                                Mas info
                             </a>
                         )}
                     </div>
