@@ -5,13 +5,9 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import styles from './EventCalendar.module.css';
+import dataCalendar from '../pages/calendar_events.json';
 
-
-const fetchEvents = async () => {
-  const res = await fetch('/calendar-events.json');
-  return res.json();
-};
-
+console.log('CALENDARIO - Data importada:', dataCalendar);
 
 function getEventsForMonth(events, date) {
   const month = date.getMonth() + 1;
@@ -30,14 +26,11 @@ const months = [
 
 const EventCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(dataCalendar || []);
   const [monthEvents, setMonthEvents] = useState([]);
 
   useEffect(() => {
-    fetchEvents().then(setEvents);
-  }, []);
-
-  useEffect(() => {
+    console.log('Events cargados:', events);
     setMonthEvents(getEventsForMonth(events, currentDate));
   }, [currentDate, events]);
 
